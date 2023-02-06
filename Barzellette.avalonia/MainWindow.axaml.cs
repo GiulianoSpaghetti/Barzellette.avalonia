@@ -96,6 +96,16 @@ namespace Barzellette.avalonia
                 btnRandom.IsEnabled = false;
                 return;
             }
+            catch (InvalidOperationException ex)
+            {
+                lblbarzelletta.Content = this.FindResource("IpErrato");
+                btnVisualizza.IsEnabled = false;
+                btnAvanti.IsEnabled = false;
+                btnIndietro.IsEnabled = false;
+                btnRandom.IsEnabled = false;
+                return;
+
+            }
             if (reader.HasRows)
             {
                 reader.Read();
@@ -157,6 +167,16 @@ namespace Barzellette.avalonia
                 btnIndietro.IsEnabled = false;
                 btnRandom.IsEnabled = false;
                 return;
+            }
+            catch (InvalidOperationException ex)
+            {
+                lblbarzelletta.Content = this.FindResource("IpErrato");
+                btnVisualizza.IsEnabled = false;
+                btnAvanti.IsEnabled = false;
+                btnIndietro.IsEnabled = false;
+                btnRandom.IsEnabled = false;
+                return;
+
             }
             if (reader.HasRows)
             {

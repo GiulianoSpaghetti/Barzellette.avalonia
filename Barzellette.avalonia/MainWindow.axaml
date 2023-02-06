@@ -21,6 +21,7 @@
 				<x:String x:Key="InvalidParameters">Bisogna passare l'ip, il nome utente e la password come parametri.</x:String>
 				<x:String x:Key="Error">Errore</x:String>
 				<x:String x:Key="Copyright">©</x:String>
+				<x:String x:Key="IpErrato">La connessione si trova in stato chiuso. Assicurati che l'ip sia corretto.</x:String>
 			</ResourceDictionary>
 		</Window.Resources>
 	<Grid>

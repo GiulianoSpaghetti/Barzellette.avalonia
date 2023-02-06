@@ -1,0 +1,2 @@
+Per avviarla c'è bisogno del .net framework runtime 7.0, scaricabile all'indirizzo: https://dotnet.microsoft.com/en-us/download/dotnet/7.0
+Hai bisogno anche di un server mariadb (mysql) funzionante ed opportunamente configurato. Puoi trovare il backup di un possibile database nel mio onedrive.
