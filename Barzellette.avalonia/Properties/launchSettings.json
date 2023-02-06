@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Barzellette.avalonia": {
+      "commandName": "Project",
+      "commandLineArgs": "192.168.1.132 numerone S0l3+lun4"
+    }
+  }
+}
