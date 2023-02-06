@@ -20,6 +20,7 @@
 				<x:String x:Key="IDEmpty">Il campo ID è vuoto</x:String>
 				<x:String x:Key="InvalidParameters">Bisogna passare l'ip, il nome utente e la password come parametri.</x:String>
 				<x:String x:Key="Error">Errore</x:String>
+				<x:String x:Key="Copyright">©</x:String>
 			</ResourceDictionary>
 		</Window.Resources>
 	<Grid>
