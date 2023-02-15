@@ -209,7 +209,7 @@ namespace Barzellette.avalonia
         }
         private void mnInfo_click(object sender, RoutedEventArgs e)
         {
-            lblbarzelletta.Content = $"Autore: Giulio Sorrentino © 2023\nVersione: 0.1\nUn semplice fortune personale basato su Avalonia e MariaDB\nLicenza: GPL 3.0 o, secondo la tua opinione, qualsiasi versione successiva.";
+            lblbarzelletta.Content = $"Autore: Giulio Sorrentino © 2023\nVersione: 0.2\nUn semplice fortune personale basato su Avalonia e MariaDB\nLicenza: GPL 3.0 o, secondo la tua opinione, qualsiasi versione successiva.";
         }
     }
 }
