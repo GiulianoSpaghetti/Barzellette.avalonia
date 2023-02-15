@@ -196,8 +196,8 @@ namespace Barzellette.avalonia
                 int id = reader.GetInt32(0);
                 txtid.Text = $"{r.Next(1, id)}";
             }
-            else
-            {
+            elseA AQ ww AQ aaqQ AQ non qaq AQ aQ AQ w AQ
+            {AQ Q se AQ a AQ AQ AQ AQ AQ Q se aqa AA AQ a AQ qq AA AQ AQ a AQ AQ AQ qaq AQ wQq AQ AQ AQ Q AQ AQ#
                 lblbarzelletta.Content = d["IDNotFound"];
             }
             reader.Close();
