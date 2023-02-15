@@ -4,7 +4,7 @@ using MySqlConnector;
 using System;
 using System.Data.Common;
 using System.Data;
-
+using System.Globalization;
 
 namespace Barzellette.avalonia
 {
@@ -16,10 +16,14 @@ namespace Barzellette.avalonia
         private MySqlCommand command;
         private MySqlDataReader reader;
         private Random r;
+        private ResourceDictionary d;
         public MainWindow()
         {
             string[] args = Environment.GetCommandLineArgs();
             InitializeComponent();
+            d = this.FindResource(CultureInfo.CurrentUICulture.TwoLetterISOLanguageName) as ResourceDictionary;
+            if (d == null)
+                d = this.FindResource("it") as ResourceDictionary;
             r = new Random();
             if (args.Length == 4)
             {
@@ -29,13 +33,21 @@ namespace Barzellette.avalonia
             }
             else
             {
-                lblbarzelletta.Content = this.FindResource("InvalidParameters") as string;
+                lblbarzelletta.Content =d["InvalidParameters"] as string;
                 btnVisualizza.IsEnabled = false;
                 btnAvanti.IsEnabled = false;
                 btnIndietro.IsEnabled = false;
                 btnRandom.IsEnabled = false;
 
             }
+            mnFile.Header = d["File"];
+            mnEsci.Header = d["Exit"];
+            mnPI.Header = d["?"];
+            mnInfo.Header = d["Informations"];
+            btnIndietro.Content = d["Back"];
+            btnAvanti.Content = d["Forward"];
+            btnVisualizza.Content = d["Show"];
+            btnRandom.Content = d["Random"];
         }
 
         private async void connect(string ip, string user, string passwd)
@@ -73,12 +85,12 @@ namespace Barzellette.avalonia
             }
             catch (System.FormatException)
             {
-                lblbarzelletta.Content = this.FindResource("IDNotInteger") as string;
+                lblbarzelletta.Content = d["IDNotInteger"] as string;
                 return;
             }
             catch (System.ArgumentNullException)
             {
-                lblbarzelletta.Content = this.FindResource("IDEmpty") as string;
+                lblbarzelletta.Content = d["IDEmpty"] as string;
                 return;
             }
             command = conn.CreateCommand();
@@ -98,7 +110,7 @@ namespace Barzellette.avalonia
             }
             catch (InvalidOperationException ex)
             {
-                lblbarzelletta.Content = this.FindResource("IpErrato");
+                lblbarzelletta.Content = d["IpErrato"];
                 btnVisualizza.IsEnabled = false;
                 btnAvanti.IsEnabled = false;
                 btnIndietro.IsEnabled = false;
@@ -113,7 +125,7 @@ namespace Barzellette.avalonia
             }
             else
             {
-                lblbarzelletta.Content = this.FindResource("IDNotFound") as string;
+                lblbarzelletta.Content = d["IDNotFound"] as string;
             }
             reader.Close();
         }
@@ -128,7 +140,7 @@ namespace Barzellette.avalonia
             }
             catch (System.FormatException)
             {
-                lblbarzelletta.Content = this.FindResource("IDNotFound") as string;
+                lblbarzelletta.Content = d["IDNotFound"] as string;
                 return;
             }
             txtid.Text = $"{--id}";
@@ -144,7 +156,7 @@ namespace Barzellette.avalonia
             }
             catch (System.FormatException)
             {
-                lblbarzelletta.Content = this.FindResource("IDNotFound") as string;
+                lblbarzelletta.Content = d["IDNotFound"] as string;
                 return;
             }
             txtid.Text = $"{++id}";
@@ -170,7 +182,7 @@ namespace Barzellette.avalonia
             }
             catch (InvalidOperationException ex)
             {
-                lblbarzelletta.Content = this.FindResource("IpErrato");
+                lblbarzelletta.Content = d["IpErrato"];
                 btnVisualizza.IsEnabled = false;
                 btnAvanti.IsEnabled = false;
                 btnIndietro.IsEnabled = false;
@@ -186,7 +198,7 @@ namespace Barzellette.avalonia
             }
             else
             {
-                lblbarzelletta.Content = this.FindResource("IDNotFound");
+                lblbarzelletta.Content = d["IDNotFound"];
             }
             reader.Close();
         }
@@ -197,7 +209,7 @@ namespace Barzellette.avalonia
         }
         private void mnInfo_click(object sender, RoutedEventArgs e)
         {
-            lblbarzelletta.Content = $"Autore: Giulio Sorrentino {this.FindResource("Copyright")} 2023\nVersione: 0.1\nUn semplice fortune personale basato su Avalonia e MariaDB\nLicenza: GPL 3.0 o, secondo la tua opinione, qualsiasi versione successiva.";
+            lblbarzelletta.Content = $"Autore: Giulio Sorrentino {d["Copyright"]} 2023\nVersione: 0.1\nUn semplice fortune personale basato su Avalonia e MariaDB\nLicenza: GPL 3.0 o, secondo la tua opinione, qualsiasi versione successiva.";
         }
     }
 }

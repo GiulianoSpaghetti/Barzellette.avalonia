@@ -6,7 +6,7 @@
         x:Class="Barzellette.avalonia.MainWindow"
         Title="Barzellette.avalonia">
 		<Window.Resources>
-			<ResourceDictionary>
+			<ResourceDictionary x:Key="it">
 				<x:String x:Key="File">File</x:String>
 				<x:String x:Key="Exit">Esci</x:String>
 				<x:String x:Key="?">?</x:String>
@@ -22,6 +22,23 @@
 				<x:String x:Key="Error">Errore</x:String>
 				<x:String x:Key="Copyright">©</x:String>
 				<x:String x:Key="IpErrato">La connessione si trova in stato chiuso. Assicurati che l'ip sia corretto.</x:String>
+			</ResourceDictionary>
+			<ResourceDictionary x:Key="en">
+				<x:String x:Key="File">File</x:String>
+				<x:String x:Key="Exit">Exit</x:String>
+				<x:String x:Key="?">?</x:String>
+				<x:String x:Key="Informations">Informations</x:String>
+				<x:String x:Key="Back">Back</x:String>
+				<x:String x:Key="Show">Show</x:String>
+				<x:String x:Key="Forward">Forward</x:String>
+				<x:String x:Key="Random">Random</x:String>
+				<x:String x:Key="IDNotInteger">The filed ID is not integer.</x:String>
+				<x:String x:Key="IDNotFound">The selected ID has not been found.</x:String>
+				<x:String x:Key="IDEmpty">The filed ID is empty</x:String>
+				<x:String x:Key="InvalidParameters">THe ip of the mariadb server the username and the password for connection must be passed as parameters.</x:String>
+				<x:String x:Key="Error">Error</x:String>
+				<x:String x:Key="Copyright">©</x:String>
+				<x:String x:Key="IpErrato">The connection is in closed state. Probably the IP is wrong</x:String>
 			</ResourceDictionary>
 		</Window.Resources>
 	<Grid>
