@@ -196,8 +196,8 @@ namespace Barzellette.avalonia
                 int id = reader.GetInt32(0);
                 txtid.Text = $"{r.Next(1, id)}";
             }
-            elseA AQ ww AQ aaqQ AQ non qaq AQ aQ AQ w AQ
-            {AQ Q se AQ a AQ AQ AQ AQ AQ Q se aqa AA AQ a AQ qq AA AQ AQ a AQ AQ AQ qaq AQ wQq AQ AQ AQ Q AQ AQ#
+            else
+            {
                 lblbarzelletta.Content = d["IDNotFound"];
             }
             reader.Close();
@@ -209,7 +209,7 @@ namespace Barzellette.avalonia
         }
         private void mnInfo_click(object sender, RoutedEventArgs e)
         {
-            lblbarzelletta.Content = $"Autore: Giulio Sorrentino &copy; 2023\nVersione: 0.1\nUn semplice fortune personale basato su Avalonia e MariaDB\nLicenza: GPL 3.0 o, secondo la tua opinione, qualsiasi versione successiva.";
+            lblbarzelletta.Content = $"Autore: Giulio Sorrentino {d["Copyright"]} 2023\nVersione: 0.1\nUn semplice fortune personale basato su Avalonia e MariaDB\nLicenza: GPL 3.0 o, secondo la tua opinione, qualsiasi versione successiva.";
         }
     }
 }
