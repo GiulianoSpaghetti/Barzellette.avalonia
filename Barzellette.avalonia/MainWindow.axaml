@@ -20,7 +20,6 @@
 				<x:String x:Key="IDEmpty">Il campo ID è vuoto</x:String>
 				<x:String x:Key="InvalidParameters">Bisogna passare l'ip, il nome utente e la password come parametri.</x:String>
 				<x:String x:Key="Error">Errore</x:String>
-				<x:String x:Key="Copyright">©</x:String>
 				<x:String x:Key="IpErrato">La connessione si trova in stato chiuso. Assicurati che l'ip sia corretto.</x:String>
 			</ResourceDictionary>
 			<ResourceDictionary x:Key="en">
@@ -37,7 +36,6 @@
 				<x:String x:Key="IDEmpty">The filed ID is empty</x:String>
 				<x:String x:Key="InvalidParameters">THe ip of the mariadb server the username and the password for connection must be passed as parameters.</x:String>
 				<x:String x:Key="Error">Error</x:String>
-				<x:String x:Key="Copyright">©</x:String>
 				<x:String x:Key="IpErrato">The connection is in closed state. Probably the IP is wrong</x:String>
 			</ResourceDictionary>
 		</Window.Resources>
