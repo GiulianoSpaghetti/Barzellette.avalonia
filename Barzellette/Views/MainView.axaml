@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Barzellette.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Barzellette.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition></RowDefinition>
+		</Grid.RowDefinitions>
+		<Menu Grid.Row="0" Grid.ColumnSpan="4">
+			<MenuItem Name="mnFile" Header="File">
+				<MenuItem Name="mnEsci" Header="Esci" Click="mnEsci_click"/>
+			</MenuItem>
+			<MenuItem Name="mnPI" Header="?">
+				<MenuItem Name="mnInfo" Header="Informazioni" Click="mnInfo_click" />
+			</MenuItem>
+		</Menu>
+		<TextBox Name="txtid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"/>
+		<Label Name="lblbarzelletta" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" />
+		<Button Name="btnIndietro" Click="btnIndietro_Clicked" Content="Indietro" Grid.Row="3" Grid.Column="0" />
+		<Button Name="btnVisualizza" Click="btn_Clicked" Content="Visualizza" Grid.Row="3" Grid.Column="1"/>
+		<Button Name="btnAvanti" Click="btnAvanti_Clicked" Content="Avanti" Grid.Row="3" Grid.Column="2" />
+		<Button Name="btnRandom" Click="btnRandom_Clicked" Content="Random" Grid.Row="3" Grid.Column="3" />
+	</Grid>
+</UserControl>
