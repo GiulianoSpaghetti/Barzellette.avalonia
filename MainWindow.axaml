@@ -1,0 +1,111 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Barzellette.MainWindow"
+        Title="Barzellette">
+	<Window.Resources>
+			<ResourceDictionary x:Key="it">
+				<x:String x:Key="File">File</x:String>
+				<x:String x:Key="Exit">Esci</x:String>
+				<x:String x:Key="?">?</x:String>
+				<x:String x:Key="Informations">Informazioni</x:String>
+				<x:String x:Key="Connetti">Connetti</x:String>
+				<x:String x:Key="Back">Indietro</x:String>
+				<x:String x:Key="Show">Visualizza</x:String>
+				<x:String x:Key="Forward">Avanti</x:String>
+				<x:String x:Key="Random">A caso</x:String>
+				<x:String x:Key="IDNotInteger">Il campo id non è intero.</x:String>
+				<x:String x:Key="IDNotFound">L'id selezionato non è stato trovato</x:String>
+				<x:String x:Key="IDEmpty">Il campo ID è vuoto</x:String>
+				<x:String x:Key="InvalidParameters">Bisogna passare l'ip, il nome utente e la password come parametri.</x:String>
+				<x:String x:Key="Error">Errore</x:String>
+				<x:String x:Key="IpErrato">La connessione si trova in stato chiuso. Assicurati che l'ip sia corretto.</x:String>
+			</ResourceDictionary>
+			<ResourceDictionary x:Key="en">
+				<x:String x:Key="File">File</x:String>
+				<x:String x:Key="Exit">Exit</x:String>
+				<x:String x:Key="?">?</x:String>
+				<x:String x:Key="Informations">Informations</x:String>
+				<x:String x:Key="Connetti">Connect</x:String>
+				<x:String x:Key="Back">Back</x:String>
+				<x:String x:Key="Show">Show</x:String>
+				<x:String x:Key="Forward">Forward</x:String>
+				<x:String x:Key="Random">Random</x:String>
+				<x:String x:Key="IDNotInteger">The filed ID is not integer.</x:String>
+				<x:String x:Key="IDNotFound">The selected ID has not been found.</x:String>
+				<x:String x:Key="IDEmpty">The filed ID is empty</x:String>
+				<x:String x:Key="InvalidParameters">The ip of the mariadb server the username and the password for connection must be passed as parameters.</x:String>
+				<x:String x:Key="Error">Error</x:String>
+				<x:String x:Key="IpErrato">The connection is in closed state. Probably the IP is wrong</x:String>
+			</ResourceDictionary>
+			<ResourceDictionary x:Key="es">
+				<x:String x:Key="File">Archivo</x:String>
+				<x:String x:Key="Exit">Salida</x:String>
+				<x:String x:Key="?">?</x:String>
+				<x:String x:Key="Informations">Informaciones</x:String>
+				<x:String x:Key="Connetti">Conectar</x:String>
+
+				<x:String x:Key="Back">Atrás</x:String>
+				<x:String x:Key="Show">Mostrar</x:String>
+				<x:String x:Key="Forward">Adelante</x:String>
+				<x:String x:Key="Random">Aleatorio</x:String>
+				<x:String x:Key="IDNotInteger">El ID archivado no es un número entero.</x:String>
+				<x:String x:Key="IDNotFound">No se ha encontrado el ID seleccionado.</x:String>
+				<x:String x:Key="IDEmpty">El ID archivado está vacío.</x:String>
+				<x:String x:Key="InvalidParameters">Se debe pasar como parámetros la ip del servidor mariadb el usuario y la contraseña de conexión.</x:String>
+				<x:String x:Key="Error">Error</x:String>
+				<x:String x:Key="IpErrato">La conexión está en estado cerrado. Probablemente la IP es incorrecta</x:String>
+			</ResourceDictionary>
+			<ResourceDictionary x:Key="fr">
+				<x:String x:Key="File">Fichier</x:String>
+				<x:String x:Key="Exit">Sortie</x:String>
+				<x:String x:Key="?">?</x:String>
+				<x:String x:Key="Informations">Informations</x:String>
+				<x:String x:Key="Connetti">Connecter</x:String>
+				<x:String x:Key="Back">Retour</x:String>
+ 				<x:String x:Key="Show">Afficher</x:String>
+ 				<x:String x:Key="Forward">Transférer</x:String>
+				<x:String x:Key="Random">Aléatoire</x:String>
+				<x:String x:Key="IDNotInteger">L'ID stocké n'est pas un numéro complet.</x:String>
+				<x:String x:Key="IDNotFound">Vous n'avez pas trouvé l'ID sélectionné.</x:String>
+				<x:String x:Key="IDEmpty">L'ID archivé est vide.</x:String>
+				<x:String x:Key="InvalidParameters">L'adresse IP et le code de connexion de l'utilisateur doivent être considérés comme des paramètres.</x:String>
+				<x:String x:Key="Error">Erreur</x:String>
+				<x:String x:Key="IpErrato">La connexion est dans un état incorrect. L'adresse IP est probablement fausse</x:String>
+		 </ResourceDictionary>
+	</Window.Resources>
+	<Window.Content>
+		<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition />
+			<ColumnDefinition />
+			<ColumnDefinition />
+			<ColumnDefinition />
+			<ColumnDefinition />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="auto"/>
+			<RowDefinition />
+			<RowDefinition />
+			<RowDefinition></RowDefinition>
+		</Grid.RowDefinitions>
+		<Menu Grid.Row="0" Grid.ColumnSpan="4">
+			<MenuItem Name="mnFile" Header="File">
+				<MenuItem Name="mnEsci" Header="Esci" Click="mnEsci_click"/>
+			</MenuItem>
+			<MenuItem Name="mnPI" Header="?">
+				<MenuItem Name="mnInfo" Header="Informazioni" Click="mnInfo_click" />
+			</MenuItem>
+		</Menu>
+		<TextBox Name="txtid" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"/>
+		<Label Name="lblbarzelletta" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" />
+		<Button Name="btnConnetti" Click="btnConnetti_Clicked" Grid.Row="3" Grid.Column="0" />
+		<Button Name="btnIndietro" Click="btnIndietro_Clicked" Grid.Row="3" Grid.Column="1" IsEnabled="false" />
+		<Button Name="btnVisualizza" Click="btn_Clicked" Grid.Row="3" Grid.Column="2" IsEnabled="false" />
+		<Button Name="btnAvanti" Click="btnAvanti_Clicked" Grid.Row="3" Grid.Column="3" IsEnabled="false" />
+		<Button Name="btnRandom" Click="btnRandom_Clicked" Grid.Row="3" Grid.Column="4" IsEnabled="false" />
+	</Grid>
+</Window.Content>
+</Window>
